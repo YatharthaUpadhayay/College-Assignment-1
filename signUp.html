@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkOut</title>
+    <style>
+         .checkOutButton{
+            padding: 8px 16px;
+            border-radius: 16px;
+            border: none;
+            font-size:large;
+        }
+    </style>
+</head>
+<body style="font-family: sans-serif; height: 100vh; display: flex; align-items: center; justify-content: center; background-image: url(backgroundImage.jpg); background-repeat: no-repeat; background-size: cover;">
+    <div id="checkOut" style="width: 30vw; position: absolute; place-items: center; top: 50%; left: 50%; transform: translate(-50%, -50%); ">
+        <!-- Sign Up -->
+        <div id="signUp" style="background: rgba(255, 255, 255, 0.9); border: 1px solid white; border-radius: 16px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(50px);">
+            <h1 style="justify-content: center; gap: 16px; display: flex; align-items: center;">
+                <button class="checkOutButton" style="background: linear-gradient(blue, purple); color: white;">Sign up</button>
+                <button class="checkOutButton" onclick="openLogin()">Log in</button>
+            </h1>
+            <form style="padding: 16px; font-size: larger; border-radius: 16px; color: black;">
+                <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                    <label for="Name"> First Name</label>
+                    <input type="text" style="margin: 8px; padding: 8px 16px; border-radius: 16px; border: 1px solid black; background: rgba(255, 255, 255, 0.2);">
+                </div>
+                <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                    <label for="Name">Last Name</label>
+                    <input type="text" style="margin: 8px; padding: 8px 16px; border-radius: 16px; border: 1px solid black; background: rgba(255, 255, 255, 0.2);">
+                </div>
+                <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                    <label for="Email Id">Email Id</label>
+                    <input type="text" style="margin: 8px; padding: 8px 16px; border-radius: 16px; border: 1px solid black; background: rgba(255, 255, 255, 0.2);">
+                </div>
+                <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                    <label for="password">Password</label>
+                    <input type="password" style="margin: 8px; padding: 8px 16px; border-radius: 16px; border: 1px solid black; background: rgba(255, 255, 255, 0.2);">
+                </div>
+                <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                    <label for="password">Repeat Password</label>
+                    <input type="password" style="margin: 8px; padding: 8px 16px; border-radius: 16px; border: 1px solid black; background: rgba(255, 255, 255, 0.2);">
+                </div>
+                <div>
+                    <input type="checkbox">
+                    <label for="Remember me">Remember me</label>
+                </div>
+                <!-- <button type="reset" style="padding: 8px 0px; border: none; text-align: left; width: 100%; cursor: pointer; text-decoration: underline;"><a href="https://www.google.com" target="_blank">forgot password</a></button> -->
+                <div style="margin-top: 16px; display: flex; justify-content: center; gap: 8px;">
+                    <button type="reset" style="padding: 8px 16px; border-radius: 16px; border: none; cursor: pointer">Reset</button>
+                    <button type="submit"
+                        style="padding: 8px 16px; border-radius: 16px; border: none; background: linear-gradient(blue, purple); color: white; cursor: pointer">Submit</button>
+                </div>
+            </form>
+        </div>
+ 
+        <div id="logIn" style="display: none; background: rgba(255, 255, 255, 0.9); border: 1px solid white; border-radius: 16px; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(50px);">
+            <h1 style="justify-content: center; display: flex; align-items: center;">
+                <button class="checkOutButton" onclick="openSignUp()" >Sign up</button>
+                <button class="checkOutButton" style="background: linear-gradient(blue, purple); color: white;">Log in</button>
+            </h1>
+            <form style="padding: 16px; font-size: larger; border-radius: 16px; color: black;">
+                <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                    <label for="Name/Email">User Name/Email Id</label>
+                    <input type="text" style="margin: 8px; padding: 8px 16px; border-radius: 16px; border: 1px solid black; background: rgba(255, 255, 255, 0.2);">
+                </div>
+                <div style="width: 100%; display: flex; justify-content: space-between; align-items: center;">
+                    <label for="password">Password</label>
+                    <input type="password" style="margin: 8px; padding: 8px 16px; border-radius: 16px; border: 1px solid black; background: rgba(255, 255, 255, 0.2);">
+                </div>
+                <button style="padding: 8px 0px; border: none; text-align: left; width: 100%; cursor: pointer; text-decoration: underline;"><a href="https://www.google.com" target="_blank">forgot password</a></button>
+                <div>
+                    <input type="checkbox">
+                    <label for="Remember me">Remember me</label>
+                </div>
+                <div style="margin-top: 16px; display: flex; justify-content: center; gap: 8px;">
+                    <button style="padding: 8px 16px; border-radius: 16px; border: 1px solid black; cursor: pointer">Reset</button>
+                    <button type="submit"
+                        style="padding: 8px 16px; border-radius: 16px; border: none; background: linear-gradient(blue, purple); color: white; cursor: pointer">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        var checkOut = document.getElementById('checkOut');
+        var signUp = document.getElementById('signUp');
+        var logIn = document.getElementById('logIn');
+
+        function openCheckOut() {
+            checkOut.style.display = "grid";
+        }
+
+        function closeCheckOut() {
+            checkOut.style.display = "none";
+            signUp.style.display = "block";
+            logIn.style.display = "none";
+        }
+        
+
+        function openLogin() {
+            signUp.style.display = "none";
+            logIn.style.display = "block";
+        }
+
+        function openSignUp() {
+            signUp.style.display = "block";
+            logIn.style.display = "none";
+        }
+    </script>
+</body>
+</html>
